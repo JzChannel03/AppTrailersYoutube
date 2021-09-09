@@ -1,0 +1,28 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "Login";
+}
+
+<head>
+    <link rel="stylesheet" href="~/CSS/Style.css" />
+    <title>@ViewBag.Title</title>
+</head>
+
+<body style="background-image: url(/IMG/peli.jpg); background-repeat: no-repeat; background-attachment: fixed;">
+    @using (Html.BeginForm("InicioSesión", "Principal", FormMethod.Post, new { @class = "box" }))
+    {
+        <h1>LOGIN</h1>
+        <input type="text" name="usuario" placeholder="Usuario">
+        <input type="password" name="contra" placeholder="Contraseña">
+        <label style="color: white;"><u>@ViewBag.ErrorSession</u></label>
+        <input type="submit" value="Entrar">
+    }
+
+    @*<form method="POST">
+        <h1>LOGIN</h1>
+        <input type="text" name="usuario" placeholder="Usuario">
+        <input type="password" name="contra" placeholder="Contraseña">
+        <input type="submit" value="Entrar">
+    </form>*@
+
+</body>

@@ -1,0 +1,183 @@
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<DataZone.videos>
+@{
+    ViewBag.Title = "Visor de Tráilers";
+}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/PagedList.css" />
+    <link rel="stylesheet" type="text/css" href="~/CSS/main.css" />
+</head>
+
+<body>
+
+    <div class="grid-container">
+        <!--DIV--><div class="header">
+    <h1 class="animate__animated animate__bounce animate__delay-1s"><img src="~/IMG/movie_white_48dp.svg" /> <a style="color: white" href="~/Principal/Index">Videos-Tráilers</a></h1>
+    @using (Html.BeginForm("Filtro", "Principal", FormMethod.Post))
+    {
+                  <div class="center gridbusqueda">
+                      <input width="10" height="20" type="text" name="buscar" placeholder="Búsqueda" class="input-group-text" required />
+                      <input type="image" alt="Apply" value="Apply" class="btn btn-primary" src="~/IMG/search_white_24dp.svg" />
+                  </div>
+        
+    }
+</div>
+        <!--DIV--><div class="videos">
+            <div>
+                @if (Model.TotalItemCount == 0)
+                {
+
+
+                    <label class="grande pagination" style="margin-top: 13%;">No hay videos en el sistema, pronto serán añadidos!</label>
+                }
+                else
+                {
+                    foreach (var item in Model)
+                    {
+                        <label style="padding: 20px;" class="grande">@item.titulo</label>
+                        <div class="gridvid">
+                            <div class="vid">
+                                <iframe width="448" height="252" src="@item.enlace" title="YouTube video player"
+                                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen>
+                                </iframe>
+
+                            </div>
+                            <div>
+                                @if (ViewBag.Session == true)
+                                {
+                                    <a class="btn btn-primary btn-sm animate__animated animate__backInRight animate__delay-3s" id="@item.id" onclick="GetbyID(this.id)"><img alt="List View" src="~/IMG/edit_white_24dp.svg"></a>
+                                }
+
+                            </div>
+                            <div>
+                                @if (ViewBag.Session == true)
+                                {
+                                <a class="btn btn-danger btn-sm animate__animated animate__backInRight animate__delay-3s" id="@item.id" onclick="GetbyDelID(this.id)"><img alt="List View" src="~/IMG/delete_forever_white_24dp.svg"></a>
+                                }
+                                
+                            </div>
+
+                        </div>
+                        <hr />
+
+                    }
+                }
+
+                <div class="pagination">
+                    @if (Model.TotalItemCount != 0)
+                    {
+                        <br />
+                        <label>Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) de @Model.PageCount</label>
+
+                        <label>Cantidad de Videos = @Model.TotalItemCount</label>
+
+                        @Html.PagedListPager(Model, page => Url.Action("Index", "Principal", new { page, pageSize = ViewBag.PageSize }))
+
+
+                    }
+
+                </div>
+
+            </div>
+        </div>
+        <!--DIV--><div class="addvideos">
+                      <div>
+                          @if (ViewBag.Session == true)
+                          {
+                              <!--Espacio de formulario para agregar videos-->
+                              using (Html.BeginForm("Index", "Principal", FormMethod.Post))
+                              {
+                                  <div class="center">
+                                      <p>
+                                          <label class="grande" style="margin-bottom: 10px">Agregar Tráilers al Sistema:</label>
+                                          <input type="text" name="title" placeholder="Title" class="input-group-text" required />
+                                          <br />
+                                          <input type="text" name="url" placeholder="URL" class="input-group-text" required />
+                                          <label class="text-danger grande" style="margin-top: 10px; margin-bottom: 10px; font-size: 15px;">@ViewBag.UrlError</label>
+                                          <br />
+                                          <input type="image" alt="Apply" value="Apply" class="btn btn-primary" src="~/IMG/add_circle_outline_white_24dp.svg" />
+                                      </p>
+
+                                  </div>
+
+                              }
+            }
+            else
+            {
+                      <div class="center">
+                          <p>
+                              <label class="grande" style="margin-bottom: 10px; margin-bottom: 0;"><b>Conoce sobre los Tráilers más recientes en nuestra Web!</b></label>
+                              <hr />
+                              <label>Aquí accederás a los tráilers de las más recientes películas para que estés informado siempre!</label>
+                              <hr />
+                              <label>Utiliza el buscador si deseas saber sobre una película en específico, la palabra que recuerdes de su nombre es lo necesario para encontrarla!</label>
+                          </p>
+                      </div>
+            }
+
+                      </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: red">
+                    <h4 class="modal-title">@ViewBag.Title</h4>
+                </div>
+                <div class="modal-body" style="background-color: floralwhite">
+                </div>
+                <div class="modal-footer" style="text-align:center;">
+                    <label class="modalfoot"><img src="~/IMG/mouse_black_24dp.svg" />Cierre este diálogo dando clic fuera de él</label>
+                </div>
+                    
+            </div>
+        </div>
+    </div>
+    @section scripts{
+        <script>
+        function GetbyID(ID) {
+              $.get("@Url.Action("GetByID", "Principal")/" + ID,
+                function (data) {
+                    $('.modal-body').html(data);
+                });
+                $("#myModal").modal("show");
+        }
+         function GetbyDelID(ID) {
+              $.get("@Url.Action("GetByDeleteID", "Principal")/" + ID,
+                function (data) {
+                    $('.modal-body').html(data);
+                });
+                $("#myModal").modal("show");
+        }
+        function EditData() {
+             $.post("@Url.Action("MyEditPartial", "Principal")",
+                function (data) {
+                    $('.modal-body').html(data);
+                });
+                $("#myModal").modal("show");
+        }
+        function Delete(ID) {
+            $.post("@Url.Action("MyDeletePartial", "Principal")/" + ID,
+                function (data) {
+                   $('.modal-body').html(data);
+                });
+            $("#myModal").modal("show");
+        }
+        </script>
+    }
+</body>
+
+
+
+
+

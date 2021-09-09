@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="trailerModelStoreContainer" CdmEntityContainer="TrailerDB">
+    <EntitySetMapping Name="administrator">
+      <EntityTypeMapping TypeName="trailerModel.administrator">
+        <MappingFragment StoreEntitySet="administrator">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="contra" ColumnName="contra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="videos">
+      <EntityTypeMapping TypeName="trailerModel.videos">
+        <MappingFragment StoreEntitySet="videos">
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="enlace" ColumnName="enlace" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

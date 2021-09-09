@@ -1,0 +1,106 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300&family=Work+Sans:wght@300&display=swap');
+@import url(https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css);
+
+* {
+    font-family: 'Work Sans', sans-serif;
+}
+
+.grid-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    background-color: red;
+    word-wrap: break-word;
+    grid-template-columns: 75% 25%;
+    grid-template-rows: auto;
+}
+
+    .grid-container div {
+        display: grid;
+    }
+
+        .grid-container div.header {
+            padding: 20px;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            background-color: crimson;
+            color: white;
+            display: grid;
+            grid-template-columns: 74% 26%;
+            grid-template-rows: auto;
+        }
+
+        .grid-container div.addvideos {
+            background-color: #00FFD8;
+        }
+        .grid-container div.videos {
+            background-color: floralwhite;
+        }
+
+.center {
+    padding-top: 15px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.gridbusqueda {
+    border-radius: 8px;
+    margin: 0;
+    padding: 8px;
+    padding-right: 0px;
+    padding-left: 7px;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: auto;
+    column-gap: 35px;
+    background-color: maroon;
+}
+
+.vid{
+    padding: 20px;
+}
+.grande {
+    font-size: 25px;
+}
+.input-group-text {
+    margin-left: 9%;
+}
+.pagination {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+div.gridvid {
+    width: 90%;
+    max-width: 1000px;
+    display: grid;
+    word-wrap: break-word;
+    grid-template-columns: 80% 20%;
+    grid-template-rows: auto;
+    column-gap: 10px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+    div.gridvid div a {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    iframe{
+        border: red 3px solid;
+    }
+.modalfoot {
+    text-align: center;
+}

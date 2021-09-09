@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrailerApp", "TrailerApp\TrailerApp.csproj", "{83CC7171-E99F-4E7D-BF90-37CB5D1B9CB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataZone", "DataZone\DataZone.csproj", "{62003902-7A80-4104-A467-2D90DA8BB4CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{83CC7171-E99F-4E7D-BF90-37CB5D1B9CB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83CC7171-E99F-4E7D-BF90-37CB5D1B9CB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83CC7171-E99F-4E7D-BF90-37CB5D1B9CB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83CC7171-E99F-4E7D-BF90-37CB5D1B9CB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62003902-7A80-4104-A467-2D90DA8BB4CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62003902-7A80-4104-A467-2D90DA8BB4CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62003902-7A80-4104-A467-2D90DA8BB4CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62003902-7A80-4104-A467-2D90DA8BB4CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {29277F3B-B9AA-4796-82CD-5F5C7B51DEC1}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,12 @@
+C:\Users\jzcha\source\repos\TrailerApp\DataZone\bin\Debug\DataZone.dll.config
+C:\Users\jzcha\source\repos\TrailerApp\DataZone\bin\Debug\DataZone.dll
+C:\Users\jzcha\source\repos\TrailerApp\DataZone\bin\Debug\DataZone.pdb
+C:\Users\jzcha\source\repos\TrailerApp\DataZone\bin\Debug\EntityFramework.dll
+C:\Users\jzcha\source\repos\TrailerApp\DataZone\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\jzcha\source\repos\TrailerApp\DataZone\bin\Debug\EntityFramework.xml
+C:\Users\jzcha\source\repos\TrailerApp\DataZone\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\jzcha\source\repos\TrailerApp\DataZone\obj\Debug\DataZone.csproj.CoreCompileInputs.cache
+C:\Users\jzcha\source\repos\TrailerApp\DataZone\obj\Debug\DataZone.csproj.CopyComplete
+C:\Users\jzcha\source\repos\TrailerApp\DataZone\obj\Debug\DataZone.dll
+C:\Users\jzcha\source\repos\TrailerApp\DataZone\obj\Debug\DataZone.pdb
+C:\Users\jzcha\source\repos\TrailerApp\DataZone\obj\Debug\DataZone.csproj.AssemblyReference.cache
